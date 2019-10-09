@@ -1,0 +1,31 @@
+@import "src/assets/style/imports.scss";
+
+.buttonContainer {
+	display: flex;
+	height: 8vh;
+  justify-content: center;
+  width: 100%;
+
+	.button {
+    margin-top: 10px;
+		cursor: pointer;
+		border-radius: 35px;
+		display: inline-block;
+		height: 8vh;
+		font-size: 17px;
+		text-align: center;
+		border: none;
+    outline: none;
+    width: 100%;
+    color: $white;
+    font-weight: bold;
+    background-color: $green;
+	}
+
+  .disabled {
+		cursor: not-allowed;
+		font-size: 18px;
+		color: black;
+		background-color: $light-grey !important;
+  }
+}

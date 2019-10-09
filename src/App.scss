@@ -1,0 +1,39 @@
+@import 'assets/style/imports.scss';
+
+#toast-container {
+    div {
+        opacity: 1;
+    }
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.hackathon-shadow {
+  box-shadow: 3px 3px 3px $grey;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.topTen {
+  margin-top: 10px;
+}
+
+.orange {
+  color: $orange;
+}
+
+.green {
+  color: $green;
+}

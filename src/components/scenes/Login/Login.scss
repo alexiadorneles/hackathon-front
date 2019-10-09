@@ -1,0 +1,21 @@
+@import 'src/assets/style/imports.scss';
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: rgb(64, 109, 84);
+    width: 100%;
+    a {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+    }
+}
+
+.signin {
+  width: 60%;
+}

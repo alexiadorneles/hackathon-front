@@ -1,0 +1,37 @@
+.box {
+  position: absolute;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 50%;
+  bottom: 0;
+  width: 100%;
+  border-radius: 8% 8% 0 0;
+  padding: 35px;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  flex-direction: column;
+}
+
+.fa-chevron-down {
+  cursor: pointer;
+}
+
+.big {
+  height: 85%;
+}
+
+.small {
+  height: 35%;
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.flexOne {
+  flex: 3;
+}
+
