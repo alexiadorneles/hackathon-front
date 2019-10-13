@@ -15,11 +15,29 @@
     "dist"
   ],
   "paths": {
-    "scenes": [
-      "./components/scenes"
-    ],
     "generics": [
-      "./components/generics"
+      "generics"
+    ],
+    "assets": [
+      "assets"
+    ],
+    "img": [
+      "img"
+    ],
+    "services": [
+      "services"
+    ],
+    "objects": [
+      "objects"
+    ],
+    "utils": [
+      "utils"
+    ],
+    "constants": [
+      "constants"
+    ],
+    "scenes": [
+      "scenes"
     ]
   }
 }

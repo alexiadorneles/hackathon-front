@@ -1,5 +1,5 @@
 import React from 'react'
-import { HackathonBoxContent } from '../HackathonBoxContent'
+import { HackathonBoxContent } from 'generics'
 
 export const HackathonPlace = ({ densed, complementar, name = 'prefeitura de porto alegre' }) => (
   <HackathonBoxContent>

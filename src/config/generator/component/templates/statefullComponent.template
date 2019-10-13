@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import './%__COMPONENT_NAME__%.scss'
 
 export class %__COMPONENT_NAME__% extends Component {
-  static propTypes = {}
   render() {
     return (
       null

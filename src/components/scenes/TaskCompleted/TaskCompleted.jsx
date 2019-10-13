@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HackathonMap, HackathonBox, HackathonBoxContent, HackathonButton } from 'components/generics'
+import { HackathonMap, HackathonBox, HackathonBoxContent, HackathonButton } from 'generics'
 
 import './TaskCompleted.scss'
 

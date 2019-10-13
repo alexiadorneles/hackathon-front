@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import store from '../../../objects/store'
+import { HackathonBoxContent, HackathonPicture } from 'generics'
+import store from 'objects/store'
 
 import './HackathonFeed.scss'
 

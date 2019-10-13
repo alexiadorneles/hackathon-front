@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { HackathonPlace, HackathonBoxContent, HackathonInput, HackathonBox, HackathonMap, HackathonDivider, HackathonFeed } from '../../generics'
+import {
+  HackathonPlace, HackathonBoxContent, HackathonInput,
+  HackathonBox, HackathonMap, HackathonDivider, HackathonFeed,
+} from 'generics'
 import { toastrService } from 'services'
-import store from '../../../objects/store'
+import store from 'objects/store'
 
 const marker = {
   lat: -30.027990,
@@ -31,7 +34,6 @@ export class PlaceDetail extends Component {
     return (
       <div className="app-container">
         <HackathonMap marker={marker} />
-
         <HackathonBox footer={this._buildFooter()} arrow={true} big={true}>
           <HackathonBoxContent>
             <HackathonPlace densed={true} place={{ name: 'prefeitura de porto alegre' }} />

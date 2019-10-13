@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import { HackathonMap, HackathonBox, HackathonBoxContent, HackathonPlace } from 'components/generics'
-import { HackathonDivider } from 'components/generics'
+import { HackathonMap, HackathonBox, HackathonBoxContent, HackathonPlace } from 'generics'
+import { HackathonDivider } from 'generics'
 import './Home.scss'
 
 class Home extends Component {

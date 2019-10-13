@@ -123,9 +123,14 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
-      assets: path.join(root, 'src', 'assets'),
+      utils: path.join(root, 'src', 'utils'),
+      services: path.join(root, 'src', 'services'),
+      constants: path.join(root, 'src', 'constants'),
+      objects: path.join(root, 'src', 'objects'),
       generics: path.join(root, 'src', 'components', 'generics'),
       scenes: path.join(root, 'src', 'components', 'scenes'),
+      assets: path.join(root, 'src', 'assets'),
+      img: path.join(root, 'src', 'assets', 'img'),
     },
     modules: ['node_modules'],
   },

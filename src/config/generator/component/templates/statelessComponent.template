@@ -1,13 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import './%__COMPONENT_NAME__%.scss'
 
 const %__COMPONENT_NAME__% = ({}) => {
   return null
-}
-
-%__COMPONENT_NAME__%.propTypes = {
 }
 
 export { %__COMPONENT_NAME__% }

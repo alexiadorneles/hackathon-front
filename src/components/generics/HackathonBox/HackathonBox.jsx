@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { HackathonDivider } from 'components/generics'
+import { HackathonDivider } from 'generics'
 
 import './HackathonBox.scss'
 
