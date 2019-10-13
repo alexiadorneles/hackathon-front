@@ -4,7 +4,7 @@ import './HackathonLogo.scss'
 
 class HackathonLogo extends Component {
   render() {
-    return <img className="logo" src={Logo} alt="Desbrava" />
+    return <img className="logo" src={Logo} alt="" />
   }
 }
 

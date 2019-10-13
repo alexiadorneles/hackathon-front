@@ -10,18 +10,23 @@
         "loose": true
       }
     ],
-    // [
-    //   "module-resolver",
-    //   {
-    //     "root": [
-    //       "./src"
-    //     ],
-    //     "alias": {
-    //       "assets": "./src/assets",
-    //       "generics": "./src/components/generics",
-    //       "scenes": "./src/components/scenes"
-    //     }
-    //   }
-    // ]
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "assets": "./src/assets",
+          "constants": "./src/constants",
+          "img": "./src/assets/img",
+          "utils": "./src/utils",
+          "objects": "./src/objects",
+          "services": "./src/services",
+          "generics": "./src/components/generics",
+          "scenes": "./src/components/scenes"
+        }
+      }
+    ]
   ]
 }

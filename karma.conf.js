@@ -29,7 +29,7 @@ module.exports = function (config) {
       },
       resolve: {
         alias: {
-          img: path.join(root, 'assets', 'img'),
+          img: path.join(root, 'src', 'assets', 'img'),
           generics: path.join(root, 'src', 'components', 'generics'),
           scenes: path.join(root, 'src', 'components', 'scenes'),
           constants: path.join(root, 'src', 'constants'),

@@ -1,7 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "baseUrl": "./src",
+    "baseUrl": "./",
+    "paths": {
+      "assets": ["src/assets"],
+      "constants": ["src/constants"],
+      "img": ["src/assets/img"],
+      "utils": ["src/utils"],
+      "objects": ["src/objects"],
+      "services": ["src/services"],
+      "generics": ["src/components/generics"],
+      "scenes": ["src/components/scenes"]
+    },
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
@@ -15,29 +25,13 @@
     "dist"
   ],
   "paths": {
-    "generics": [
-      "generics"
-    ],
-    "assets": [
-      "assets"
-    ],
-    "img": [
-      "img"
-    ],
-    "services": [
-      "services"
-    ],
-    "objects": [
-      "objects"
-    ],
-    "utils": [
-      "utils"
-    ],
-    "constants": [
-      "constants"
-    ],
-    "scenes": [
-      "scenes"
-    ]
+    "assets": "./src/assets",
+    "constants": "./src/constants",
+    "img": "./src/assets/img",
+    "utils": "./src/utils",
+    "objects": "./src/objects",
+    "services": "./src/services",
+    "generics": "./src/components/generics",
+    "scenes": "./src/components/scenes"
   }
 }

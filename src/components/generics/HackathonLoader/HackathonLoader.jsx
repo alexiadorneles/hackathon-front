@@ -8,10 +8,10 @@ const HackathonLoader = () => {
   return (
     <div id={HACKATHON_LOADER_ID}>
       <Loader
-        type="Ball-Triangle"
+        type="BallTriangle"
         color="#00BFFF"
-        height="100"
-        width="100"
+        height={100}
+        width={100}
       />
     </div>
   )
