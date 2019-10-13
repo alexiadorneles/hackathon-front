@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { GoogleLogin } from 'react-google-login'
 
-import { HackathonLogo } from 'generics'
+import { HackathonLogo } from 'components/generics'
 import { authService } from 'services'
 import { localStorageUtils } from 'utils'
 

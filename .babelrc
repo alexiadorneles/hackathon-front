@@ -11,17 +11,17 @@
       }
     ],
     [
-      // "module-resolver",
-      // {
-      //   "root": [
-      //     "./src"
-      //   ],
-        // "alias": {
-        //   "assets": "./src/assets",
-        //   "generics": "./src/components/generics",
-        //   "scenes": "./src/components/scenes"
-        // }
-      // }
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "assets": "./src/assets",
+          "generics": "./src/components/generics",
+          "scenes": "./src/components/scenes"
+        }
+      }
     ]
   ]
 }

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import { localStorageUtils } from 'utils'
+import { HackathonLoader } from 'components/generics'
+import { Home, TaskCompleted, PlaceDetail, Login } from 'components/scenes'
 
 import './App.scss'
 

@@ -15,10 +15,10 @@
     "dist"
   ],
   "paths": {
-    "@scenes": [
+    "scenes": [
       "./components/scenes"
     ],
-    "@generics": [
+    "generics": [
       "./components/generics"
     ]
   }

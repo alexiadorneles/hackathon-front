@@ -122,11 +122,11 @@ module.exports = {
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx'],
-    // alias: {
-    //   assets: path.join(root, 'src', 'assets'),
-    //   generics: path.join(root, 'src', 'components', 'generics'),
-    //   scenes: path.join(root, 'src', 'components', 'scenes'),
-    // },
+    alias: {
+      assets: path.join(root, 'src', 'assets'),
+      generics: path.join(root, 'src', 'components', 'generics'),
+      scenes: path.join(root, 'src', 'components', 'scenes'),
+    },
     modules: ['node_modules'],
   },
 }

@@ -32,7 +32,7 @@ module.exports = function (config) {
           img: path.join(root, 'assets', 'img'),
           generics: path.join(root, 'src', 'components', 'generics'),
           scenes: path.join(root, 'src', 'components', 'scenes'),
-          ['@constants']: path.join(root, 'src', 'constants'),
+          constants: path.join(root, 'src', 'constants'),
           objects: path.join(root, 'src', 'objects'),
         },
         extensions: ['.js', '.jsx'],
