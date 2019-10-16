@@ -15,7 +15,7 @@ const generateGenericComponent = (componentName, isStateless) => {
 }
 
 const generateScreenComponent = (componentName) => {
-  const screensComponentPath = path.join(SRC_FOLDER_PATH, 'components', 'screens')
+  const screensComponentPath = path.join(SRC_FOLDER_PATH, 'components', 'scenes')
   _generateComponent(screensComponentPath, componentName, _generateStatefullFile)
 }
 
