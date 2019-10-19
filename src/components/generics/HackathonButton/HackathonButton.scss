@@ -19,7 +19,7 @@
     width: 30%;
     color: $white;
     font-weight: bold;
-    background-color: $green;
+    background-color: $primary;
 	}
 
   .disabled {
@@ -27,5 +27,9 @@
 		font-size: 18px;
 		color: black;
 		background-color: $light-grey !important;
+  }
+
+  .secondaryColorButton {
+    background-color: $secondary;
   }
 }
