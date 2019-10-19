@@ -3,7 +3,7 @@ import './HackathonInput.scss'
 
 class HackathonInput extends Component {
   render() {
-    const { label, type, value, onChange, name, placeholder, onSubmit } = this.props
+    const { label, type, value, onChange, name, placeholder } = this.props
     return (
       <div className="inputGroup">
         <label className="label" htmlFor={label}>{label}</label>
@@ -16,7 +16,6 @@ class HackathonInput extends Component {
           name={name}
           placeholder={placeholder}
         />
-        <img onClick={() => onSubmit(value)} src={require('img/enviar.png')} />
       </div>
     )
   }
