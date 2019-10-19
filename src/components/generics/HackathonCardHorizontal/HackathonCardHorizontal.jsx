@@ -8,7 +8,7 @@ export class HackathonCardHorizontal extends Component {
     return (
       <Fragment>
         <HackathonCard>
-          <div className="hackathonCardHorizontal">
+          <div className={`hackathonCardHorizontal ${this.props.onCardClick ? 'pointer' : ''}`} onClick={this.props.onCardClick}>
             <div className="hackathonCardHorizontal picture">
               <HackathonPicture imgSrc={this.props.imgSrc} />
             </div>

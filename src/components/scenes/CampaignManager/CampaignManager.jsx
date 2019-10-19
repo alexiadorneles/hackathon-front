@@ -38,8 +38,12 @@ export class CampaignManager extends Component {
 
   _renderCampaignList = () => {
     return campaignMock.map(item =>
-      <HackathonCardHorizontal imgSrc={item.image} title={item.title} text={item.text}/>
+      <HackathonCardHorizontal onCardClick={this.onCardClick} imgSrc={item.image} title={item.title} text={item.text}/>
     )
+  }
+
+  onCardClick = (card) => {
+    return this.props.history.push('/campaign')
   }
 
   render() {
@@ -55,10 +59,6 @@ export class CampaignManager extends Component {
         <div className="campaignManagerUserContent">
           <HackathonCardVertical title={"Maria"} text={"Ela adora doar casacos."} imgSrc="https://images.unsplash.com/photo-1471342051519-9621d25323fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"/>
         </div>
-        {this.state.isOwner ? 
-          <HackthonButtonAddCampaign/>
-          : null
-        }
       </Fragment>
     )
   }
