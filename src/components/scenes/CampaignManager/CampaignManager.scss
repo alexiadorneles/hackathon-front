@@ -1,0 +1,20 @@
+@import 'src/assets/style/imports.scss';
+
+.campaignManager {
+    width: 100%;
+    background-color: rgba($primary,0.5);
+    .campaignList{
+        display: flex;
+        flex-direction: row;
+        max-width: 1000px;
+        flex-wrap: wrap;
+        margin-left: 500px;
+        margin-top: 30px;
+    }
+}
+
+.campaignManagerUserContent{
+    position: absolute;
+    left: 30px;
+    margin-top: 30px;
+}
