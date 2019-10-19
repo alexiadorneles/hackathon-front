@@ -1,0 +1,26 @@
+@import 'src/assets/style/imports.scss';
+
+.header {
+  width: 100%;
+  height: 10vh;
+  background-color: white;
+  display: flex;
+  padding-right: 5vw;
+
+  .menu-logo {
+    flex: 1;
+  }
+
+  .menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .menu-link {
+      text-decoration: none;
+      padding: 0 1vw;
+      color: $orange;
+      font-weight: 700;
+    }
+  }
+}
