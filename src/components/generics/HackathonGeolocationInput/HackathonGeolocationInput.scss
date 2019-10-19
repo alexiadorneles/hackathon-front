@@ -1,0 +1,28 @@
+@import "src/assets/style/imports.scss";
+
+.geolocation-input {
+  padding: 3vh 1vw;
+  width: 60%;
+  position: relative;
+
+  label {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .google-convert {
+    position: relative;
+  }
+
+  div > li.custom-geolocation-list {
+    display: none;
+  }
+
+  .style-unordered-list {
+    list-style: none;
+    z-index: 2;
+    position: absolute;
+    background-color: white;
+  }
+}
