@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { localStorageUtils } from 'utils'
 import { HackathonLoader } from 'generics'
-import { Home, TaskCompleted, PlaceDetail, Login } from 'scenes'
+import { Home, TaskCompleted, PlaceDetail, Login, Campaign } from 'scenes'
 
 import './App.scss'
 
@@ -27,6 +27,7 @@ class App extends Component {
             <Route path="/main" component={Home} />
             <Route path="/completed" component={TaskCompleted} />
             <Route path="/detail" component={PlaceDetail} />
+            <Route path="/campaign" component={Campaign} />
             <Route path="/" component={Login} />
           </Switch>
         </BrowserRouter>

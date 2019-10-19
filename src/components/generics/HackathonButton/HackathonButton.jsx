@@ -13,9 +13,9 @@ class HackathonButton extends Component {
   }
 
   render() {
-    const { styleClass, children, type, disabled } = this.props
+    const { styleClass, children, type, disabled, justifyStart } = this.props
     return (
-      <div className="buttonContainer">
+      <div className={"buttonContainer" + (justifyStart ? " buttonContainerStart" : "")}>
         <button
           disabled={disabled}
           type={type}
