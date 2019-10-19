@@ -4,7 +4,13 @@ import './HackathonLogo.scss'
 
 class HackathonLogo extends Component {
   render() {
-    return <img className="logo" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="" />
+    return (
+      <div>
+        <span className="logo-text">BE A </span>
+          <img className="logo" src={require('img/beahero2.png')} alt="" />
+        <span className="logo-text">UPERHERO</span>
+      </div>
+    )
   }
 }
 
