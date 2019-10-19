@@ -29,7 +29,7 @@ class App extends Component {
             <Route path="/detail" component={PlaceDetail} />
             <Route path="/campaign" component={Campaign} />
             <Route path="/campaign_manager" component={CampaignManager} />
-            <Route path="/" component={Login} />
+            <Route path="/" exact component={Login} />
             <Route path="/signup" component={SignUp} />
           </Switch>
         </BrowserRouter>

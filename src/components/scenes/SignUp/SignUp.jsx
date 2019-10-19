@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './SignUp.scss'
 import { TextInput, HackathonButton, HackathonSkillInput } from 'generics'
 import { HackathonGeolocationInput } from 'generics'
+import { UserService, toastrService } from 'services'
 
 export class SignUp extends Component {
   constructor() {
@@ -26,7 +27,14 @@ export class SignUp extends Component {
     })
   }
 
-  submit = () => {
+  submit = async (user) => {
+    const userService = new UserService()
+    try {
+      await userService.createUser(user)  
+      toastrService.success('Salvo com sucesso!')    
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   handleOnSubmit = (e) => {
@@ -41,7 +49,7 @@ export class SignUp extends Component {
     })
   }
 
-  handleCoordinatesChange = ({coordinates}) => {
+  handleCoordinatesChange = ({ coordinates }) => {
     this.setState({
       coordinates,
     })
@@ -81,7 +89,7 @@ export class SignUp extends Component {
             <TextInput label='CPF' type='text' value={cpf} onChange={this.handleInputChange} name='cpf' placeholder='' />
           </div>
           <div className="form-column">
-            <HackathonSkillInput onChange={this.handleSkillsChange}/>
+            <HackathonSkillInput onChange={this.handleSkillsChange} />
             <HackathonGeolocationInput onChange={this.handleCoordinatesChange} />
             <input name="image" id="image" accept="image/*" onChange={this.handleImageChange} type="file" />
             {this.renderUploadButtonOrImage()}
