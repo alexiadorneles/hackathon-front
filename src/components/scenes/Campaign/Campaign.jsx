@@ -6,28 +6,16 @@ import './Campaign.scss'
 import { Header, HackathonCardVertical, HackathonTitleBox, HackathonItemCard, HackathonBigImage, HackathonMaterialModal } from 'generics'
 import { campaignService, toastrService } from 'services'
 
-const itemMock = [
-  {
-    name: 'Agasalho',
-    text: 'Agasalhos para ajudar crianças do abrigo durante o inverno severo do RS.',
-    meta: 100,
-  },
-  {
-    name: 'Moletom',
-    text: 'Molentos para ajudar crianças do abrigo durante o inverno severo do RS.',
-    meta: 50,
-  },
-]
-
 const imgSrc = 'https://images.unsplash.com/photo-1513807016779-d51c0c026263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
 
 export class Campaign extends Component {
 
-  state = { showModal: false, campaign: {} }
+  state = { showModal: false, campaign: {}, campaignItemList: [] }
 
   componentDidMount() {
     this.id = this.props.match.params.id
     this.loadById()
+    this.loadItemsById()
   }
 
   loadById = async () => {
@@ -35,9 +23,14 @@ export class Campaign extends Component {
     this.setState({campaign})
   }
 
+  loadItemsById = async() => {
+    const campaignItemList = await campaignService.findAllItemsById(this.id)
+    this.setState({campaignItemList})
+  }
+
   _renderItemSection = () => {
-    return itemMock.map(item =>
-      <HackathonItemCard onClick={this.onClickAddMaterial} key={item.name} name={item.name} meta={item.meta} text={item.text} />
+    return this.state.campaignItemList.map(item =>
+      <HackathonItemCard onClick={this.onClickAddMaterial} key={item.title} name={item.title} meta={item.quantity} text={item.description} />
     )
   }
 
@@ -49,15 +42,9 @@ export class Campaign extends Component {
     this.setState({ showModal: false })
   }
 
-   makeDonation = async(quantidade) => {
-    await donationService.makeDonation({
-      campaign: this.state.campaign,
-      quantidade,
-      material: this.material,
-    })
+   makeDonation = () => {
     this.onCloseModal()
     toastrService.success('Sucesso!', 'Sua doação vai ser processada pela organização e logo entrarão em contato com você')
-    this.loadById()
   }
 
   render() {
