@@ -3,7 +3,8 @@ import Person from '../../../assets/img/person.jpg'
 //import Trofeu from '../../../assets/img/trofeu.png'
 import './Campaign.scss'
 
-import { Header, HackathonCardVertical, HackathonTitleBox, HackathonItemCard, HackathonButton, HackathonBigImage, HackathonMaterialModal } from 'generics'
+import { Header, HackathonCardVertical, HackathonTitleBox, HackathonItemCard, HackathonBigImage, HackathonMaterialModal } from 'generics'
+import { campaignService, toastrService } from 'services'
 
 const itemMock = [
   {
@@ -22,7 +23,17 @@ const imgSrc = 'https://images.unsplash.com/photo-1513807016779-d51c0c026263?ixl
 
 export class Campaign extends Component {
 
-  state = { showModal: false }
+  state = { showModal: false, campaign: {} }
+
+  componentDidMount() {
+    this.id = this.props.match.params.id
+    this.loadById()
+  }
+
+  loadById = async () => {
+    const campaign = await campaignService.findById(this.id)
+    this.setState({campaign})
+  }
 
   _renderItemSection = () => {
     return itemMock.map(item =>
@@ -38,11 +49,22 @@ export class Campaign extends Component {
     this.setState({ showModal: false })
   }
 
+   makeDonation = async(quantidade) => {
+    await donationService.makeDonation({
+      campaign: this.state.campaign,
+      quantidade,
+      material: this.material,
+    })
+    this.onCloseModal()
+    toastrService.success('Sucesso!', 'Sua doação vai ser processada pela organização e logo entrarão em contato com você')
+    this.loadById()
+  }
+
   render() {
     return (
       <div className="campaignContainer page">
         <Header />
-        {this.state.showModal ? <HackathonMaterialModal onClose={this.onCloseModal} title="Adicionar material" /> : null}
+        {this.state.showModal ? <HackathonMaterialModal model="" onClick={this.makeDonation} onClose={this.onCloseModal} title="Adicionar material" /> : null}
         <div className="campaign">
           <div className="userContent">
             <HackathonCardVertical imgSrc={Person} title={'Maria'} text={'Ela adora doar casacos.'} />
@@ -62,7 +84,6 @@ export class Campaign extends Component {
                 {this._renderItemSection()}
               </div>
               <div className="campaignButtonSection">
-                {/* <HackathonButton onClick={this.onClickAddMaterial} justifyStart styleClass="campaignButton">Adicionar Material</HackathonButton> */}
               </div>
             </div>
           </div>

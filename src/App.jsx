@@ -25,12 +25,11 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route path="/main" component={MainPage} />
-            <Route path="/completed" component={TaskCompleted} />
             <Route path="/detail" component={PlaceDetail} />
-            <Route path="/campaign" component={Campaign} />
+            <Route path="/campaign/:id" component={Campaign} />
             <Route path="/campaign_manager" component={CampaignManager} />
-            <Route path="/" component={Login} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/" component={Login} />
           </Switch>
         </BrowserRouter>
       </div>
