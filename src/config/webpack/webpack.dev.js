@@ -9,14 +9,14 @@ module.exports = merge(common, {
   },
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          // eslint options (if necessary)
-        },
-      },
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   exclude: /node_modules/,
+      //   loader: 'eslint-loader',
+      //   options: {
+      //     // eslint options (if necessary)
+      //   },
+      // },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
