@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { localStorageUtils } from 'utils'
 import { HackathonLoader } from 'generics'
-import { Home, TaskCompleted, PlaceDetail, Login, Campaign, MainPage, SignUp, CampaignManager } from 'scenes'
+import { TaskCompleted, PlaceDetail, Login, Campaign, MainPage, SignUp, CampaignManager } from 'scenes'
 
 import './App.scss'
 

@@ -1,29 +1,40 @@
-@import 'src/assets/style/imports.scss';
+@import "src/assets/style/imports.scss";
 
 .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: rgb(64, 109, 84);
+  width: 100%;
+
+  .login-card {
+    background-color: white;
+    height: 60vh;
+    width: 30vw;
+    padding-top: 10vh;
+    border: 1px solid transparent;
+    border-radius: 2.5%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     flex-direction: column;
-    background-color: rgb(64, 109, 84);
-    width: 100%;
+    align-items: center;
 
-    .login-card {
-      background-color: white;
-      height: 60vh;
-      width: 30vw;
-      padding-top: 10vh;
-      border: 1px solid transparent;
-      border-radius: 2.5%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .buttonContainer {
-        padding-top: 20px;
-      }
+    .menu-logo {
+      color: #00c4cc;
+      font-size: 24px;
+      font-weight: 900;
     }
+
+    .buttonContainer {
+      padding-top: 20px;
+    }
+
+    .isCompany {
+      display: flex;
+      text-align: center;
+    }
+  }
 }
 
 .signin {

@@ -45,7 +45,7 @@ class Login extends Component {
     }
     await this.login({ email, password })
   }
- 
+
   goInternal(event, path) {
     const { history } = this.props
     history.push(path)
@@ -57,6 +57,7 @@ class Login extends Component {
     return (
       <div className='login'>
         <form onSubmit={this.handleOnSubmit} className='login-card'>
+          <div className="menu-logo">Be A HERO!</div>
           <TextInput label='Email' type='text' value={email} onChange={this.handleInputChange} name='email' placeholder='' />
           <TextInput label='Senha' type='password' value={password} onChange={this.handleInputChange} name='password' placeholder='' />
           <TextInput label='É empresa?' type='checkbox' value={isCompany} onChange={this.handleInputChange} name='isCompany' placeholder='' />
