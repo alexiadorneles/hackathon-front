@@ -61,8 +61,32 @@
   }
 
   .rank {
+    background-color: rgba($primary, 0.5);
+    max-height: 700px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .rank-content {
+    width: 100%;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+  }
+}
+
+.Container {
+  position: relative;
+  left: 50%;
+  transform: translate(-150%);
+  width: 30%;
+  .card {
+    width: 120%;
   }
 }
