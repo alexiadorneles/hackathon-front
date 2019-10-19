@@ -2,65 +2,26 @@ import React, { Component, Fragment } from 'react'
 
 import './MainPage.scss'
 import { Header, HackathonButton, HackathonCardHorizontal, HackathonBigImage, HackathonLogo } from 'generics'
+import { rankService } from 'services'
 
 const imgSrc = 'https://images.unsplash.com/photo-1531325082793-ca7c9db6a4c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
-const ranksMock = [
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-  {
-    title: 'João é o amigo das crianças!',
-    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    imgSrc: 'https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2017/12/15_pl537_pessoa-324x235.jpg',
-  },
-]
 
 export class MainPage extends Component {
 
+  state = { ranks: [] }
+
+  async componentDidMount() {
+    const ranks = await rankService.getRank()
+    const allRanked = ranks.volunteer.concat(ranks.companies)
+    this.setState({ranks: allRanked})
+  }
+
+  goToSignUp = () => {
+    this.props.history.push('/signup')
+  }
+
   _renderRankSection = () => {
-    return ranksMock.map(rank =>
+    return this.state.ranks.map(rank =>
       <HackathonCardHorizontal
         key={rank.title} {...rank}
       />
@@ -97,15 +58,18 @@ export class MainPage extends Component {
             <HackathonButton
               styleClass="override-button"
               containerClass="image-button"
+              onClick={this.goToSignUp}
             > Sou uma empresa </HackathonButton>
             <HackathonButton
               isSecondaryColor={true}
               styleClass="override-button"
               containerClass="image-button"
+              onClick={this.goToSignUp}
             > Sou uma organização </HackathonButton>
             <HackathonButton
               styleClass="override-button"
               containerClass="image-button"
+              onClick={this.goToSignUp}
             > Sou um voluntário </HackathonButton>
           </Fragment>
         </HackathonBigImage>

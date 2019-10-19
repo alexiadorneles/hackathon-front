@@ -25,9 +25,10 @@ class HackathonButton extends Component {
       containerClass,
       isSecondaryColor,
       justifyStart,
+      justifyEnd,
     } = this.props
     return (
-      <div className={`buttonContainer ${containerClass} ${justifyStart ? " buttonContainerStart" : ""}`}>
+      <div className={`buttonContainer ${containerClass} ${justifyStart ? " buttonContainerStart" : ""} ${justifyEnd ? " buttonContainerEnd" : ""}`}>
         <button
           disabled={disabled}
           type={type}

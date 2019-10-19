@@ -1,7 +1,6 @@
 export * from './Home/Home'
 export * from './Login/Login'
 export * from './PlaceDetail/PlaceDetail'
-export * from './TaskCompleted/TaskCompleted'
 export * from './MainPage/MainPage'
 export * from './SignUp/SignUp'
 export * from './Campaign/Campaign'
