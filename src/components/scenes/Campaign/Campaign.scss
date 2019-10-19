@@ -1,39 +1,50 @@
 @import 'src/assets/style/imports.scss';
 
-.campaign{
+.campaignContainer{
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    background-color: #B2DFFF;
-    .mainSection{
+    flex-direction: column;
+    .campaign{
         display: flex;
-        flex-direction: row;        
-        .campaignContent{
-            .campaignTitle{
-                margin-bottom: 20px;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($primary,0.5);
+        .mainSection{
+            display: flex;
+            flex-direction: column;     
+            .campaignImage{
+                width: 100%;
+            }   
+            .campaignContent{
+                margin-top: 30px;
+                margin-left: 520px;
+                margin-right: 100px;   
+                .campaignTitle{
+                    margin-bottom: 20px;
+                }
+                .campaignItemSection{
+                    display: flex;
+                    flex-direction: column;
+                    max-height: 300px;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+                    margin-left: -10px;
+                    margin-top: 10px;
+                }
+                .campaignButton{
+                    background-color: #FFB736;
+                    color: black;
+                    border: 1px solid black;
+                }
             }
-            .campaignItemSection{
-                display: flex;
-                flex-direction: row;
-                align-content: flex-start;
-                margin-left: -10px;
-                margin-top: 10px;
-            }
-            .campaignButton{
-                background-color: #FFB736;
-                color: black;
-                border: 1px solid black;
-            }
-            margin-top: 300px;
-            margin-left: 520px;
-            margin-right: 100px;   
+        }
+        .userContent{
+            align-content: flex-start;
+            position: absolute;
+            z-index: 2;
+            margin-top: 50px;
+            margin-left: 40px;
         }
     }
-    .userContent{
-        align-content: flex-start;
-        position: absolute;
-        margin-top: 50px;
-        margin-left: 40px;
-    }
 }
+
