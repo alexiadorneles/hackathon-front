@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react'
 import './CampaignManager.scss'
 
 import { Header, HackathonBigImage, HackathonCardVertical, HackathonCardHorizontal, HackthonButtonAddCampaign } from 'generics'
+import { campaignService } from 'services'
 
 const campaignMock = [
   {
@@ -34,16 +35,25 @@ const campaignMock = [
 
 export class CampaignManager extends Component {
 
-  state = { isOwner: true }
+  state = { campaignList: [], isOwner: true }
+
+  componentDidMount(){
+      this.loadAllCampaign()
+  }
+
+  loadAllCampaign = async () => {
+    const campaignList = await campaignService.findAll()
+    this.setState({campaignList})
+  }
 
   _renderCampaignList = () => {
-    return campaignMock.map(item =>
-      <HackathonCardHorizontal onCardClick={this.onCardClick} imgSrc={item.image} title={item.title} text={item.text}/>
+    return this.state.campaignList.map(item =>
+     <HackathonCardHorizontal onCardClick={() => this.onCardClick(item.id)} imgSrc={item.imageUrl} title={item.title} text={item.description}/>
     )
   }
 
-  onCardClick = (card) => {
-    return this.props.history.push('/campaign')
+  onCardClick = id => {
+    return this.props.history.push(`/campaign/${id}`)
   }
 
   render() {
