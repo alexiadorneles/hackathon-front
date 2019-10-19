@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import './HackathonButton.scss'
 
+const getButtonClass = (styleClass, disabled, isSecondaryColor) => {
+  return `button ${styleClass} ${disabled ? 'disabled' : ''} ${isSecondaryColor ? 'secondaryColorButton' : ''}`
+}
+
 class HackathonButton extends Component {
   constructor() {
     super()
@@ -13,14 +17,22 @@ class HackathonButton extends Component {
   }
 
   render() {
-    const { styleClass, children, type, disabled } = this.props
+    const {
+      styleClass,
+      children,
+      type,
+      disabled,
+      containerClass,
+      isSecondaryColor,
+      justifyStart,
+    } = this.props
     return (
-      <div className="buttonContainer">
+      <div className={`buttonContainer ${containerClass} ${justifyStart ? " buttonContainerStart" : ""}`}>
         <button
           disabled={disabled}
           type={type}
           onClick={this.click}
-          className={`button ${styleClass} ${disabled ? 'disabled' : ''}`}
+          className={getButtonClass(styleClass, disabled, isSecondaryColor)}
         >
           {children}
         </button>

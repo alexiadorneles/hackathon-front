@@ -14,7 +14,7 @@ export const Header = () => {
 
   return (
     <nav className="header">
-      <div className="menu-logo">Insert Logo Here</div>
+      <div className="menu-logo">Be A HERO!</div>
       <div className="menu-list">
         <Link to="/organizations" className="menu-link">Organizações</Link>
         <Link to="/campaign-search" className="menu-link">Buscar campanhas</Link>

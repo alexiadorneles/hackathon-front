@@ -25,11 +25,6 @@ class Login extends Component {
     }
   }
 
-  goInternal(event, path) {
-    const { history } = this.props
-    history.push(path)
-  }
-
   handleInputChange = (event) => {
     const target = event.target
     const value = target.type === 'checkbox' ? target.checked : target.value
@@ -49,6 +44,11 @@ class Login extends Component {
       localStorageUtils.setRole('USER')
     }
     await this.login({ email, password })
+  }
+ 
+  goInternal(event, path) {
+    const { history } = this.props
+    history.push(path)
   }
 
   render() {

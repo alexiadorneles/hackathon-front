@@ -1,0 +1,22 @@
+@import 'src/assets/style/imports.scss';
+
+.hackathonItemCard {
+    .topSection{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 30px;
+        .name{
+            display: flex;
+            font-size: 16px;
+        }
+        .meta{
+            font-size: 14px;
+            margin-top: -20px;
+            text-align: end;
+        }
+    }
+    .textSection{
+        font-size: 14px;
+    }
+}

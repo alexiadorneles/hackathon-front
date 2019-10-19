@@ -3,8 +3,8 @@
 .buttonContainer {
 	display: flex;
 	height: 8vh;
-  justify-content: center;
-  width: 100%;
+  	justify-content: center;
+  	width: 100%;
 
 	.button {
     margin-top: 10px;
@@ -19,7 +19,7 @@
     width: 30%;
     color: $white;
     font-weight: bold;
-    background-color: $green;
+    background-color: $primary;
 	}
 
   .disabled {
@@ -28,4 +28,12 @@
 		color: black;
 		background-color: $light-grey !important;
   }
+
+  .secondaryColorButton {
+    background-color: $secondary;
+  }
+}
+
+.buttonContainerStart{
+	justify-content: flex-start;
 }

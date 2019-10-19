@@ -1,4 +1,4 @@
-@import 'src/assets/style/imports.scss';
+@import "src/assets/style/imports.scss";
 
 .text-input-group {
   display: flex;
@@ -11,6 +11,7 @@
     font-size: 18px;
     padding-bottom: 8px;
   }
+}
 
   input {
     padding: 5px;
@@ -19,4 +20,20 @@
     height: 3vh;
     font-size: 16px;
   }
+
+.custom-input {
+  padding: 5px;
+  border: 2px solid $darkgrey;
+  border-radius: 2px;
+  height: 3vh;
+  font-size: 16px;
+}
+
+.location {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.custom-input.location::-webkit-input-placeholder {
+  color: transparent;
 }
