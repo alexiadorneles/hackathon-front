@@ -75,6 +75,7 @@ export class SignUp extends Component {
       <div className="sign-up">
         <form className="sign-up-container" onSubmit={this.handleOnSubmit}>
           <div className="form-column">
+            <h2>Cadastro</h2>
             <TextInput label='Nome' type='text' value={name} onChange={this.handleInputChange} name='name' placeholder='' />
             <TextInput label='Email' type='email' value={email} onChange={this.handleInputChange} name='email' placeholder='' />
             <TextInput label='Senha' type='password' value={password} onChange={this.handleInputChange} name='password' placeholder='' />

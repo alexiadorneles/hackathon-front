@@ -1,6 +1,21 @@
 @import 'src/assets/style/imports.scss';
 
 .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #B2DFFF;
+  width: 100%;
+
+  .login-card {
+    background-color: white;
+    height: 60vh;
+    width: 30vw;
+    padding-top: 10vh;
+    border: 1px solid transparent;
+    border-radius: 2.5%;
     display: flex;
     align-items: center;
     justify-content: center;
