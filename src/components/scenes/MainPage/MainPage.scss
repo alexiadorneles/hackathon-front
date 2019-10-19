@@ -79,14 +79,16 @@
     flex-wrap: wrap;
     padding-bottom: 20px;
   }
-}
 
-.Container {
-  position: relative;
-  left: 50%;
-  transform: translate(-150%);
-  width: 30%;
-  .card {
-    width: 120%;
+  .Container {
+    position: relative;
+    left: 50%;
+    transform: translate(-150%);
+    width: 30%;
+    .card {
+      width: 120%;
+    }
   }
 }
+
+
