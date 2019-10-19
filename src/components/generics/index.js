@@ -1,6 +1,7 @@
 export * from './HackathonBox/HackathonBox'
 export * from './HackathonBoxContent/HackathonBoxContent'
 export * from './HackathonButton/HackathonButton'
+export * from './HackathonCard/HackathonCard'
 export * from './HackathonDivider/HackathonDivider'
 export * from './HackathonFeed/HackathonFeed'
 export * from './HackathonInput/HackathonInput'
