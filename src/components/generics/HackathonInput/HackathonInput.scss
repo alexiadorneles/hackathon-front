@@ -1,50 +1,51 @@
-@import 'src/assets/style/imports.scss';
+@import "src/assets/style/imports.scss";
 .inputGroup {
-    display: flex;
-    align-items: center;
-    padding: 14px;
-    background-color: white;
-    height: 75px;
-    border-radius: 25px;
-    border: 0.5px solid grey;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    width: 100%;
-    padding: 35px 12px;
+	display: flex;
+	align-items: center;
+	padding: 14px;
+	background-color: white;
+	height: 75px;
+	border-radius: 25px;
+	border: 0.5px solid grey;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 60%;
+	padding: 35px 12px;
 }
 
-.input,.input:focus {
-    outline: 0;
-    box-shadow: none;
-    border: none;
-    background: none;
+.input,
+.input:focus {
+	outline: 0;
+	box-shadow: none;
+	border: none;
+	background: none;
 }
 
 .input {
-  font-weight: bold;
-  width: 125%;
-  padding-left: 5px;
-  height: 75px;
-  display: flex;
-  padding: 25px 5px;
+	font-weight: bold;
+	width: 125%;
+	padding-left: 5px;
+	height: 75px;
+	display: flex;
+	padding: 25px 5px;
 }
 
 .input::selection {
-    background: none;
-    color: black;
+	background: none;
+	color: black;
 }
 
 input:-webkit-autofill::selection {
-    -webkit-text-fill-color: black;
+	-webkit-text-fill-color: black;
 }
 
 .label {
-    display: inline-block;
-    margin: 0;
-    line-height: 20px;
+	display: inline-block;
+	margin: 0;
+	line-height: 20px;
 }
 
 .label {
-    text-transform: uppercase;
-    font-weight: bold;
+	text-transform: uppercase;
+	font-weight: bold;
 }

@@ -74,7 +74,7 @@ class HttpService {
     axiosInstance.interceptors.request.use((config) => { HackathonLoader.show(); return config }, error => Promise.reject(error))
     axiosInstance.interceptors.response.use((response) => { HackathonLoader.hide(); return response }, (error) => {
       HackathonLoader.hide()
-      toastrService.error(error.response && error.response.status && error.response.status ==403 ? 'Acesso negado' :  'Um erro ocorreu. Tente novamente mais tarde')
+      toastrService.error('Um erro ocorreu. Tente novamente mais tarde')
       Promise.reject(error)
     })
 
