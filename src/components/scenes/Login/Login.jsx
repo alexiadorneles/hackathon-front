@@ -19,11 +19,6 @@ class Login extends Component {
     this.goInternal(null, 'main')
   }
 
-  goInternal(event, path) {
-    const { history } = this.props
-    history.push(path)
-  }
-
   handleInputChange = (event) => {
     const { name, value } = event.target
 
@@ -32,9 +27,16 @@ class Login extends Component {
     })
   }
 
+  goInternal(event, path) {
+    const { history } = this.props
+    history.push(path)
+  }
+
+
   handleOnSubmit = (event) => {
     event.preventDefault()
-    this.login()
+    const { email, password } = this.state
+    this.login({ email, password })
   }
 
   render() {
