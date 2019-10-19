@@ -13,6 +13,14 @@
   }
 }
 
+  input {
+    padding: 5px;
+    border: 2px solid $darkgrey;
+    border-radius: 2px;
+    height: 3vh;
+    font-size: 16px;
+  }
+
 .custom-input {
   padding: 5px;
   border: 2px solid $darkgrey;

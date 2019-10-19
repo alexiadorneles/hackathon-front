@@ -27,17 +27,17 @@ class HttpService {
 
   async post(url, data = {}, config = this.getConfig()) {
     const response = await this.axios.post(`${BASE_URL}/${url}`, data, config)
-    return response && response.data
+    return response.data
   }
 
   async put(url, data = {}) {
     const response = await this.axios.put(`${BASE_URL}/${url}`, data, this.getConfig())
-    return response && response.data
+    return response.data
   }
 
   async delete(url) {
     const response = await this.axios.delete(`${BASE_URL}/${url}`, this.getConfig())
-    return response && response.data
+    return response.data
   }
 
   async accessExternal(method, url) {
@@ -59,6 +59,12 @@ class HttpService {
       })
     }
 
+    if (!_config.headers.ROLE) {
+      this.setHeader({
+        ROLE: localStorageUtils.getToken(),
+      })
+    }
+
     return _config
   }
 
@@ -68,7 +74,7 @@ class HttpService {
     axiosInstance.interceptors.request.use((config) => { HackathonLoader.show(); return config }, error => Promise.reject(error))
     axiosInstance.interceptors.response.use((response) => { HackathonLoader.hide(); return response }, (error) => {
       HackathonLoader.hide()
-      toastrService.error('Um erro ocorreu. Tente novamente mais tarde')
+      toastrService.error(error.response && error.response.status && error.response.status ==403 ? 'Acesso negado' :  'Um erro ocorreu. Tente novamente mais tarde')
       Promise.reject(error)
     })
 

@@ -10,43 +10,56 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
+      isCompany: false,
     }
   }
 
   login = async (user) => {
-    const response = await authService.login(user)
-    localStorageUtils.setToken(response)
-    this.goInternal(null, 'main')
+    try {
+      const response = await authService.login(user)
+      authService.storeLoginData(response)
+      localStorageUtils.setToken(response)
+      this.goInternal(null, 'main')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   handleInputChange = (event) => {
-    const { name, value } = event.target
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
 
     this.setState({
       [name]: value,
     })
   }
 
+  handleOnSubmit = async (event) => {
+    event.preventDefault()
+    const { email, password, isCompany } = this.state
+    if (isCompany) {
+      localStorageUtils.setRole('ORGANIZATION')
+    } else {
+      localStorageUtils.setRole('USER')
+    }
+    await this.login({ email, password })
+  }
+ 
   goInternal(event, path) {
     const { history } = this.props
     history.push(path)
   }
 
-
-  handleOnSubmit = (event) => {
-    event.preventDefault()
-    const { email, password } = this.state
-    this.login({ email, password })
-  }
-
   render() {
-    const { email, password } = this.state
+    const { email, password, isCompany } = this.state
 
     return (
       <div className='login'>
         <form onSubmit={this.handleOnSubmit} className='login-card'>
           <TextInput label='Email' type='text' value={email} onChange={this.handleInputChange} name='email' placeholder='' />
           <TextInput label='Senha' type='password' value={password} onChange={this.handleInputChange} name='password' placeholder='' />
+          <TextInput label='É empresa?' type='checkbox' value={isCompany} onChange={this.handleInputChange} name='isCompany' placeholder='' />
           <HackathonButton type='submit'>Entrar</HackathonButton>
         </form>
       </div>
