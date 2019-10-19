@@ -1,0 +1,30 @@
+@import 'src/assets/style/imports.scss';
+
+.hackathonCardHorizontal {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .picture{
+        justify-content: flex-start;
+        width: auto;
+    }
+    .content{
+        flex-direction: column;
+        margin-left: 10px;
+        .title{
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .contentText{
+            font-size: 14px;
+        }
+    }
+    .text{
+        justify-content: center;
+        align-self: center;
+    }
+    .icon{
+        justify-content: flex-end;
+        width: auto;
+    }
+}

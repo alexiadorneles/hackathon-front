@@ -7,8 +7,8 @@ export class TextInput extends Component {
 
     return (
       <div className="text-input-group">
-        <label htmlFor="">{label}</label>
-        <input type={type} name={name} value={value} onChange={onChange} />
+        <label htmlFor={name}>{label}</label>
+        <input className="custom-input" type={type} id={name} name={name} value={value} onChange={onChange} />
       </div>
     )
   }
