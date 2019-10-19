@@ -26,6 +26,16 @@ class LocalStorageUtils {
     this.set(LS_KEYS.TOKEN, token)
   }
 
+  
+  getRole() {
+    return this.get(LS_KEYS.ROLE)
+  }
+
+  setRole(role) {
+    return this.set(LS_KEYS.ROLE, role)
+
+  }
+
 }
 
 const localStorageUtils = new LocalStorageUtils()
