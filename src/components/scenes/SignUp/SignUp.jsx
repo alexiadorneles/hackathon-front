@@ -37,7 +37,7 @@ export class SignUp extends Component {
 
   handleImageChange = ({ target }) => {
     this.setState({
-      image: URL.createObjectURL(target.files[0]),
+      image: target.files[0],
     })
   }
 
@@ -58,7 +58,7 @@ export class SignUp extends Component {
     if (image) {
       return (
         <label htmlFor="image" className="image-upload">
-          <img src={image} alt="" />
+          <img src={URL.createObjectURL(image)} alt="" />
         </label>
       )
     }
