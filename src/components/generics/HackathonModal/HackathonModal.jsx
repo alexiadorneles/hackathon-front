@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal'
-import PropTypes from 'prop-types'
 
 import './HackathonModal.scss'
 
@@ -14,14 +13,15 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     maxWidth: '80vw',
     maxHeight: '60vh',
-    zIndex: '999',
+    minWidth: '20vw',
+    minHeight: '15vh',
+    zIndex: '999999',
   },
 }
 
 Modal.setAppElement('#root')
 
 class HackathonModal extends Component {
-  static propTypes = { html: PropTypes.string, onClose: PropTypes.any }
   constructor() {
     super()
 
@@ -35,6 +35,7 @@ class HackathonModal extends Component {
     const divModal = document.querySelector('.ReactModal__Overlay')
     const closeButton = document.querySelector('.onModalClose')
     divModal.appendChild(closeButton)
+    document.querySelector('.ReactModal__Overlay').style.zIndex = 9999999
   }
 
   closeModal() {
@@ -56,7 +57,7 @@ class HackathonModal extends Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Report:"
+          contentLabel={this.props.title}
         >
           <div>{this.props.children}</div>
         </Modal>
