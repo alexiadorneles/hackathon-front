@@ -1,29 +1,18 @@
-import { Promise } from 'es6-promise'
-
 import { httpService } from './httpService'
 import { localStorageUtils } from 'utils'
 
 class AuthService {
   async login(user) {
-    const loginResponse = await httpService.post('/public/login', user)
-    return new Promise(resolve => {
-      httpService.setHeader({
-        authorization: this.getToken(loginResponse.accessToken),
-      })
-
-      this.storeLoginData(loginResponse)
-      resolve()
-    })
+    const loginResponse = await httpService.post('public/login', user)
+    return loginResponse
   }
 
-  storeLoginData(loginResponse) {
-    const { idUsuario, accessToken } = loginResponse
-    localStorageUtils.setUserId(idUsuario)
+  storeLoginData(accessToken) {
     localStorageUtils.setToken(this.getToken(accessToken))
   }
 
   getToken(accessToken) {
-    return accessToken.replace('Bearer', 'Bearer ')
+    return 'Bearer '.concat(accessToken)
   }
 }
 
