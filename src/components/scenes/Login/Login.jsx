@@ -19,7 +19,7 @@ class Login extends Component {
       const response = await authService.login(user)
       authService.storeLoginData(response)
       localStorageUtils.setToken(response)
-      this.goInternal(null, 'main')
+      this.goInternal(null, '/campaign_manager')
     } catch (error) {
       console.log(error)
     }
