@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react'
 
 import './MainPage.scss'
-import { Header, HackathonButton, HackathonCardHorizontal, HackathonBigImage } from 'generics'
+import { Header, HackathonButton, HackathonCardHorizontal, HackathonBigImage, HackathonLogo } from 'generics'
 
+const imgSrc = 'https://images.unsplash.com/photo-1531325082793-ca7c9db6a4c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
 const ranksMock = [
   {
     title: 'João é o amigo das crianças!',
@@ -91,11 +92,21 @@ export class MainPage extends Component {
     return (
       <div className="MainPage page">
         <Header />
-        <HackathonBigImage>
+        <HackathonBigImage logo={<HackathonLogo />} imgSrc={imgSrc}>
           <Fragment>
-            <HackathonButton className="button" containerClass="image-button"> BUTTON </HackathonButton>
-            <HackathonButton isSecondaryColor={true} className="button" containerClass="image-button"> BUTTON </HackathonButton>
-            <HackathonButton className="button" containerClass="image-button"> BUTTON </HackathonButton>
+            <HackathonButton
+              styleClass="override-button"
+              containerClass="image-button"
+            > Sou uma empresa </HackathonButton>
+            <HackathonButton
+              isSecondaryColor={true}
+              styleClass="override-button"
+              containerClass="image-button"
+            > Sou uma organização </HackathonButton>
+            <HackathonButton
+              styleClass="override-button"
+              containerClass="image-button"
+            > Sou um voluntário </HackathonButton>
           </Fragment>
         </HackathonBigImage>
 
