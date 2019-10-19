@@ -11,17 +11,13 @@ export class HackathonMaterialModal extends Component {
     return (
       <div className="HackathonMaterialModal">
         <HackathonModal {...this.props}>
-          <div>
-            <div style={{ width: 1000 }}>
-              <TextInput label="Material" name="material" />
-              <TextInput label="Meta a Ser Atingida" name="meta" />
-              <TextInput type="select" label="Unidade de Medida" name="meta" />
+          <div id="teste">
+            <div style={{  }}>
+              <TextInput isLabelCentered type="number" label="Quantidade:" name="meta" />
+              <HackathonButton isSecondaryColor>
+                  Finalizar Doação
+              </HackathonButton>
             </div>
-            <label htmlFor={"descricao"}>Descrição</label>
-            <HackathonInput />
-            <HackathonButton justifyStart isSecondaryColor>
-              Adicionar Material
-            </HackathonButton>
           </div>
         </HackathonModal>
       </div>

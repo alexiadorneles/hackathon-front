@@ -33,8 +33,6 @@ class HackathonModal extends Component {
 
   afterOpenModal() {
     const divModal = document.querySelector('.ReactModal__Overlay')
-    const closeButton = document.querySelector('.onModalClose')
-    divModal.appendChild(closeButton)
     document.querySelector('.ReactModal__Overlay').style.zIndex = 9999999
   }
 
@@ -49,9 +47,6 @@ class HackathonModal extends Component {
   render() {
     return (
       <div className="HackathonModal">
-        <span className="onModalClose" onClick={this.closeModal}>
-          <i className="fa fa-times-circle"></i>
-        </span>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

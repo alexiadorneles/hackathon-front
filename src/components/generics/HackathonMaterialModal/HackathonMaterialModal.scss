@@ -10,6 +10,7 @@
 		font-size: 36px;
 		color: white;
 	}
+
 	.onModalClose {
 		position: absolute;
 		cursor: pointer;
@@ -18,5 +19,15 @@
 		left: 90%;
 		font-size: 36px;
 		color: white;
+	}
+}
+
+#teste {
+	.button {
+		width: 100%;
+	}
+	.text-input-group {
+		width: 100%;
+		padding: 0;
 	}
 }
