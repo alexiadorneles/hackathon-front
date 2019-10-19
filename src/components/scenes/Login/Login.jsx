@@ -1,28 +1,16 @@
 import React, { Component } from 'react'
-import { GoogleLogin } from 'react-google-login'
-
-import { HackathonLogo } from 'generics'
 import { authService } from 'services'
 import { localStorageUtils } from 'utils'
-
 import './Login.scss'
+import { TextInput, HackathonButton } from 'generics'
 
 class Login extends Component {
-  onGoogleSigninSuccess = async (response) => {
-    const user = {
-      googleId: response.googleId,
-      photo: response.w3.Paa,
-      email: response.w3.U3,
-      fullName: response.w3.ig,
-      firstName: response.w3.ofa,
-      lastName: response.w3.wea,
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: '',
+      password: '',
     }
-
-    await this.login(user)
-  }
-
-  onGoogleSigninFailure = (error) => {
-    console.log(error)
   }
 
   login = async (user) => {
@@ -36,18 +24,29 @@ class Login extends Component {
     history.push(path)
   }
 
+  handleInputChange = (event) => {
+    const { name, value } = event.target
+
+    this.setState({
+      [name]: value,
+    })
+  }
+
+  handleOnSubmit = (event) => {
+    event.preventDefault()
+    this.login()
+  }
+
   render() {
+    const { email, password } = this.state
+
     return (
-      <div className="login">
-        <HackathonLogo />
-        <GoogleLogin
-          className="signin"
-          clientId="844297895973-avi4acl30vf48h5196rus3oe1s7ndg0s.apps.googleusercontent.com"
-          buttonText="Login"
-          onSuccess={this.onGoogleSigninSuccess}
-          onFailure={this.onGoogleSigninFailure}
-          cookiePolicy={'single_host_origin'}
-        />
+      <div className='login'>
+        <form onSubmit={this.handleOnSubmit} className='login-card'>
+          <TextInput label='Email' type='text' value={email} onChange={this.handleInputChange} name='email' placeholder='' />
+          <TextInput label='Senha' type='password' value={password} onChange={this.handleInputChange} name='password' placeholder='' />
+          <HackathonButton type='submit'>Entrar</HackathonButton>
+        </form>
       </div>
     )
   }
