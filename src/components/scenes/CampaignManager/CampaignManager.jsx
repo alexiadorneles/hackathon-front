@@ -48,7 +48,7 @@ export class CampaignManager extends Component {
 
   _renderCampaignList = () => {
     return this.state.campaignList.map(item =>
-     <HackathonCardHorizontal onCardClick={() => this.onCardClick(item.id)} imgSrc={item.imageUrl} title={item.title} text={item.description}/>
+     <HackathonCardHorizontal onCardClick={() => this.onCardClick(item.id)} imgSrc='https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80' title={item.title} text={item.description}/>
     )
   }
 
@@ -67,7 +67,7 @@ export class CampaignManager extends Component {
           </div>
         </div>
         <div className="campaignManagerUserContent">
-          <HackathonCardVertical title={"Maria"} text={"Ela adora doar casacos."} imgSrc="https://images.unsplash.com/photo-1471342051519-9621d25323fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"/>
+          <HackathonCardVertical title={"Abrigo meu lar"} text={"Somos uma organização que trabalhamos com crianças carentes que possuem pais em situação de recuperação, atuamos na área desde 1997. Situados em Porto Alegre, próximos ao centro histórico, iniciamos nossa associação ajudando crianças em situação de miséria e fome extrema. Hoje, com a ajuda de nossos colaboradores, proporcionamos educação e proteção para crianças de todas as idades em situação de vunerabilidade."} imgSrc="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80"/>
         </div>
       </Fragment>
     )

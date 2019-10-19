@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import Person from '../../../assets/img/person.jpg'
 //import Trofeu from '../../../assets/img/trofeu.png'
 import './Campaign.scss'
 
 import { Header, HackathonCardVertical, HackathonTitleBox, HackathonItemCard, HackathonBigImage, HackathonMaterialModal } from 'generics'
 import { campaignService, toastrService } from 'services'
 
-const imgSrc = 'https://images.unsplash.com/photo-1513807016779-d51c0c026263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
+const imgSrc = 'https://images.unsplash.com/photo-1519038983316-43241d5d7b61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 
 export class Campaign extends Component {
 
@@ -54,7 +53,7 @@ export class Campaign extends Component {
         {this.state.showModal ? <HackathonMaterialModal model="" onClick={this.makeDonation} onClose={this.onCloseModal} title="Adicionar material" /> : null}
         <div className="campaign">
           <div className="userContent">
-            <HackathonCardVertical imgSrc={Person} title={'Maria'} text={'Ela adora doar casacos.'} />
+            <HackathonCardVertical title={"Abrigo meu lar"} text={"Somos uma organização que trabalhamos com crianças carentes que possuem pais em situação de recuperação, atuamos na área desde 1997. Situados em Porto Alegre, próximos ao centro histórico, iniciamos nossa associação ajudando crianças em situação de miséria e fome extrema. Hoje, com a ajuda de nossos colaboradores, proporcionamos educação e proteção para crianças de todas as idades em situação de vunerabilidade."} imgSrc="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80"/>
           </div>
           <div className="mainSection">
             <div className="campaignImage">
@@ -62,10 +61,10 @@ export class Campaign extends Component {
             </div>
             <div className="campaignContent">
               <div className="campaignTitle">
-                <HackathonTitleBox>Campanha do agasalho infantil</HackathonTitleBox>
+                <HackathonTitleBox>Campanha para apoio a recém nascidos</HackathonTitleBox>
               </div>
               <div className="campaignText">
-                Esta campanha tem como objetivo objetivo objetivo objetivo.
+                Esta campanha tem como objetivo apoiar recém nascidos de comunidades carentes das periferias da cidade.
               </div>
               <div className="campaignItemSection">
                 {this._renderItemSection()}

@@ -12,7 +12,7 @@ export class MainPage extends Component {
 
   async componentDidMount() {
     const ranks = await rankService.getRank()
-    const allRanked = ranks.volunteer.concat(ranks.companies)
+    const allRanked = ranks.volunteers.concat(ranks.companies)
     this.setState({ranks: allRanked})
   }
 
@@ -20,10 +20,14 @@ export class MainPage extends Component {
     this.props.history.push('/signup')
   }
 
+  goToLogin = () => {
+    this.props.history.push('/')
+  }
+
   _renderRankSection = () => {
     return this.state.ranks.map(rank =>
       <HackathonCardHorizontal
-        key={rank.title} {...rank}
+        key={rank.title} text={rank.fullName} imgSrc={rank.imageUrl}
       />
     )
   }
@@ -64,8 +68,8 @@ export class MainPage extends Component {
               isSecondaryColor={true}
               styleClass="override-button"
               containerClass="image-button"
-              onClick={this.goToSignUp}
-            > Sou uma organização </HackathonButton>
+              onClick={this.goToLogin}
+            > Já possuo cadastro </HackathonButton>
             <HackathonButton
               styleClass="override-button"
               containerClass="image-button"

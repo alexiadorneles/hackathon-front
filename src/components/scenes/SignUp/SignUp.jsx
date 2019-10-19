@@ -19,6 +19,12 @@ export class SignUp extends Component {
     }
   }
 
+
+  goInternal(event, path) {
+    const { history } = this.props
+    history.push(path)
+  }
+
   handleInputChange = (event) => {
     const { name, value } = event.target
 
@@ -31,7 +37,8 @@ export class SignUp extends Component {
     const userService = new UserService()
     try {
       await userService.createUser(user)  
-      toastrService.success('Salvo com sucesso!')    
+      toastrService.success('Salvo com sucesso!')  
+      this.goInternal(null, '/campaign_manager')
     } catch (error) {
       console.log(error)
     }
